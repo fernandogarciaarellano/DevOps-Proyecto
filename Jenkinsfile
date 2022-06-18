@@ -29,7 +29,7 @@ pipeline {
             steps {
                 withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'docker_nexus', usernameVariable: 'USERNAME', passwordVariable: 'CONTRASENIA']]) {
                     sh 'docker login 172.18.80.1:8083 -u $USERNAME -p $CONTRASENIA'
-                    sh 'docker push microservicios:latest'
+                    sh 'docker push 172.18.80.1:8083/repository/dockerhost/ microservicios:latest'
                 }
             }
         }
