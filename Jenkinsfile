@@ -27,9 +27,9 @@ pipeline {
         }
         stage('Push Image') {
             steps {
-                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'docker_nexus', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
-                    sh "docker login 172.18.80.1:8083 -u $USERNAME -p $PASSWORD"
-                    sh "docker push microservicios:latest"
+                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'docker_nexus', usernameVariable: 'USERNAME', passwordVariable: 'CONTRASENIA']]) {
+                    sh 'docker login 172.18.80.1:8083 -u $USERNAME -p $CONTRASENIA'
+                    sh 'docker push microservicios:latest'
                 }
             }
         }
