@@ -1,5 +1,8 @@
 pipeline {
     agent any
+    tools {
+        maven 'M3_9_10'
+    }
 
     stages {
         stage('Validate') {
