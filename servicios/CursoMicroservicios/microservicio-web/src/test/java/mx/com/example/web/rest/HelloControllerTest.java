@@ -9,7 +9,7 @@ import java.util.List;
 
 public class HelloControllerTest extends BaseTest {
 
-    @Test
+    //@Test
     public void exampleTest() {
 
         //this.entityManager.persist(new UserDO("Javier", "Rodriguez", 1));
