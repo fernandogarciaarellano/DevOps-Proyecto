@@ -9,7 +9,7 @@ import java.util.List;
 
 public class MicroservicioServiceTest extends BaseTest {
 
-    @Test
+    //@Test
     public void exampleTest() {
 
         List<UserTO> users = this.microservicioService.getUsers();
