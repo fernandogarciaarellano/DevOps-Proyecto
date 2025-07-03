@@ -27,9 +27,13 @@ pipeline {
                 }
             }
         }
-        stage('Deploy') {
+        stage('Push Image') {
             steps {
-                sh "docker images | grep curso-microservicios"
+                withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: 'docker_nexus', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD']]) {
+                    sh 'docker login -u USERNAME -p PASSWORD'
+                    sh 'docker push microservicio:latest'
+                    
+                }
             }
         }
     }
